@@ -9,3 +9,6 @@ The high-level flow is -
 2) Create the build spec for CodeBuild. CodeBuild will install dependancy package ("npm install" commmands specified in CodeBuild spec) and packing the lambda function code basd off the SAM spec (aws cloudformation package). Cloudformation is used as a template for SAM packaging functions.
 
 3) Use Code Pipeline to automate the build and deployment w/ code on github. It can also be integrated with AWS CodeCommit.
+
+Note:
+ - Pleas ensure CloudFormation is attached with a Role with permission to access s3 (aws cloudformation package output will be stored on S3) and Lambda execution.
